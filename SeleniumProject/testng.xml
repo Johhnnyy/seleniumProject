@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests">
+ 
+  <test name="Test1">
+  	<parameter name="deviceQuery" value="chrome"/>
+  	<parameter name="testname" value="Test1"/>
+  	
+    <classes>
+      <class name="com.selenium.SeleniumTests"/>
+    </classes>
+  </test> <!-- Test -->
+    <test name="Test">
+  	<parameter name="deviceQuery" value="firefox"/>
+  	<parameter name="testname" value="Test2"/> 	 	
+    <classes>
+      <class name="com.selenium.SeleniumTests"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test3">
+  	<parameter name="deviceQuery" value="ie"/>
+  	<parameter name="testname" value="Test3"/>
+    <classes>
+      <class name="com.selenium.SeleniumTests"/>
+    </classes>
+  </test> <!-- Test -->
+  
+</suite> <!-- Suite -->

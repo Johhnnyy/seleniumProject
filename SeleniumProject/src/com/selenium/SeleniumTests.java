@@ -51,7 +51,7 @@ public class SeleniumTests{
 			searchBar.click();
 			Thread.sleep(5000);
 			searchBar.sendKeys("Jerusalem");
-			driver.findElement(By.xpath("//*[@id=\"hplogo\"]/div")).click();
+			driver.findElement(By.xpath("//*[@id=\"hplogo\"]")).click();
 			Thread.sleep(5000);
 			driver.findElement(By.xpath("//*[@id=\"tsf\"]/div[2]/div[3]/center/input[1]")).click();
 			Thread.sleep(5000);
@@ -89,7 +89,9 @@ public class SeleniumTests{
 		dc.setCapability("project", PROJECT);
 		dc.setCapability("generateReport", generateReport);
 		dc.setCapability("testName", testName);
-
+		String val = System.getenv("BUILD_NUMBER");
+		dc.setCapability("build", val);
+		dc.setCapability("testType", "Desktop");
 		this.driver = new RemoteWebDriver(new URL(CLOUDURL), dc);
 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
